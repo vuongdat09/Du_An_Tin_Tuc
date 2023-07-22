@@ -1,0 +1,48 @@
+<div class="py-[60px] container mx-auto">
+  <div class="flex justify-center flex-col items-center">
+    <p
+      class="font-bold border border-b-[1px] border-x-0 border-t-0 uppercase p-[10px] text-lg"
+    >
+      {{ post.author }}
+    </p>
+    <h2 class="text-4xl mt-[20px] font-bold">{{ post.title }}</h2>
+    <p class="mt-[20px] font-medium">{{ post.createdAt?.substring(0, 10) }}</p>
+  </div>
+  <div class="mt-[60px] px-[150px]">
+    <img class="w-full" src="{{ post.image }}" alt="" />
+    <div class="px-[200px] mt-[60px]">
+      <p class="text-xl">{{ post.content }}</p>
+      <div class="mt-[30px]">
+        <div class="col-span-5" *ngFor="let post of posts | slice : 13 : 14">
+          <a href="post/{{ post._id }}">
+            <section
+              class="relative bg-[url({{
+                post.image
+              }})] bg-cover bg-center bg-no-repeat"
+            >
+              <div
+                class="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"
+              ></div>
+
+              <div
+                class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:items-center lg:px-8"
+              >
+                <div
+                  class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right"
+                >
+                  <h1 class="text-3xl font-extrabold sm:text-5xl text-white">
+                    {{ post.title }}
+                  </h1>
+
+                  <p class="mt-4 max-w-lg sm:text-xl/relaxed text-white">
+                    {{ post.content?.substring(0, 100 - 3) + "..." }}
+                  </p>
+                </div>
+              </div>
+            </section>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

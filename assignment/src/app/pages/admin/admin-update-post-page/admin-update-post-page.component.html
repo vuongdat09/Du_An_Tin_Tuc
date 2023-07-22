@@ -1,0 +1,31 @@
+<form class="max-w-sm mx-auto shadow-md p-6 bg-white rounded-lg" (ngSubmit)="onHandleSubmit()">
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="title">Tiêu đề:</label>
+      <input type="text" id="title" name="title" [(ngModel)]="posts.title" required
+        class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500">
+    </div>
+  
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="content">Nội dung:</label>
+      <textarea id="content" name="content" [(ngModel)]="posts.content" required
+        class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"></textarea>
+    </div>
+  
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="title">author:</label>
+      <input type="text" id="author" name="author" [(ngModel)]="posts.author" required
+        class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500">
+    </div>
+  
+    <div>
+      <label for="category">Danh mục:</label>
+      <select id="category" [(ngModel)]="posts.categoryId" name="category">
+        <option *ngFor="let category of categories" [value]="category._id">{{ category.name }}</option>
+      </select>
+    </div>
+  
+    <button type="submit"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+      Submit
+    </button>
+  </form>

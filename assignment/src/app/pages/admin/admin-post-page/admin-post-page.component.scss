@@ -1,0 +1,7 @@
+.limit-content {
+    max-height: 1em; /* Đặt chiều cao tối đa của cột (tương đương với 3 dòng) */
+    line-height: 1em; /* Đặt độ cao dòng để kiểm soát số dòng hiển thị */
+    overflow: hidden; /* Ẩn phần nội dung vượt quá chiều cao của cột */
+    text-overflow: ellipsis; /* Hiển thị dấu chấm (...) khi nội dung bị giới hạn */
+  }
+  

@@ -1,0 +1,31 @@
+<div class="bg-white p-4">
+  <h1 class="text-gray-800 text-2xl mb-4">Bảng Danh Mục</h1>
+
+  <div class="overflow-x-auto">
+    <table class="min-w-full bg-white border border-gray-200 text-center">
+      <thead>
+        <tr>
+          <th class="py-2 px-4 border">id</th>
+          <th class="py-2 px-4 border">Tên Danh Mục</th>
+          <th class="py-2 px-4 border">Nội dung</th>
+          <th class="py-2 px-4 border">Action</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="categories && categories.length">
+        <tr *ngFor="let category of categories; index as i">
+          <td class="py-2 px-4 border">{{ i }}</td>
+          <td class="py-2 px-4 border">{{ category.name }}</td>
+          <td class="py-2 px-4 border">{{ category.desc }}</td>
+          <td class="py-2 px-4 border flex space-x-[10px] flex justify-center">
+            <button class="bg-red-500 text-white px-4 py-2 rounded">
+              Delete
+            </button>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded">
+              Update
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
